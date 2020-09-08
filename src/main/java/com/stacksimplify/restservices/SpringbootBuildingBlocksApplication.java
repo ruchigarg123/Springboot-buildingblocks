@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringbootBuildingBlocksApplication {
-
+//
+	//
+	// Love yourself and enjoy what you do!! even if u dont ,...contact me hahaha..
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootBuildingBlocksApplication.class, args);
 	}
