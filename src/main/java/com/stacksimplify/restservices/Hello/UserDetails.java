@@ -1,4 +1,7 @@
-package com.stacksimplify.restservices;
+package com.stacksimplify.restservices.Hello;
+
+import org.springframework.stereotype.Component;
+
 
 public class UserDetails {
 	
@@ -6,17 +9,15 @@ public class UserDetails {
 	private String LastName;
 	private String City;
 	
-	
-	
+
 	public UserDetails(String firstName, String lastName, String city) {
 		super();
 		this.firstName = firstName;
 		LastName = lastName;
 		City = city;
+		
 	}
 	
-
-
 	public String getFirstName() {
 		return firstName;
 	}
