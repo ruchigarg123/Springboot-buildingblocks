@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.stacksimplify.restservices.entities.Order;
 import com.stacksimplify.restservices.entities.User;
+import com.stacksimplify.restservices.exceptions.OrderNotFoundException;
 //import com.stacksimplify.restservices.exceptions.OrderNotFoundException;
 import com.stacksimplify.restservices.exceptions.UserNotFoundException;
 import com.stacksimplify.restservices.repositories.OrderRepository;
@@ -28,6 +29,7 @@ public class OrderController {
 	
 	@Autowired
 	private OrderRepository orderRepository;
+	
 	
 	//get all orders for a user given with userid
 	@GetMapping("/{userid}/orders")
@@ -53,7 +55,7 @@ public class OrderController {
 		return orderRepository.save(order);
 	}
 	
-/*	@GetMapping("{userid}/orders/{orderid}")
+	@GetMapping("{userid}/orders/{orderid}")
 	public Order getOrderByOrderId(@PathVariable Long userid,@PathVariable Long orderid) throws UserNotFoundException, OrderNotFoundException
 	{
 		Optional<User> userOptional = userRepository.findById(userid);
@@ -61,15 +63,14 @@ public class OrderController {
 		{
 			throw new UserNotFoundException("User Not found");
 		}
-		Optional<Order> Optionalorder = orderRepository.findById(orderid);
-		if(!Optionalorder.isPresent())
+		Optional<Order> optionalOrder = orderRepository.findById(orderid);
+		if(!optionalOrder.isPresent())
 			throw new OrderNotFoundException("Order doesnot exist");
 		
-		//User user = userOptional.get();
-			return userOptional.get().get;	
+		    return optionalOrder.get();
 		
-			
-*/
+	}	
+
 		
 	}
 
