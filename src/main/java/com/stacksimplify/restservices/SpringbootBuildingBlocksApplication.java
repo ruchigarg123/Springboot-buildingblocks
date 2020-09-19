@@ -11,6 +11,8 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
+import com.stacksimplify.restservices.mappers.UserMapper;
+
 @SpringBootApplication
 public class SpringbootBuildingBlocksApplication {
 //
@@ -37,4 +39,5 @@ public class SpringbootBuildingBlocksApplication {
 		 messageSource.setBasename("messages");
 		 return messageSource;
 	}
+
 }
